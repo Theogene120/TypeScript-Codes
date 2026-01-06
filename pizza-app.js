@@ -1,28 +1,25 @@
 const menu = [
-    {name: 'Margherita', price: 8},
-    {name: 'Pepperoni', price: 10},
-    {name: 'Hawaiian', price: 10},
-    {name: 'Veggie', price: 9}
+    { name: "Margherita", price: 8 },
+    { name: "Pepperoni", price: 10 },
+    { name: "Hawaiian", price: 10 },
+    { name: "Veggie", price: 9 },
 ]
 
-let cashInRegister = 100
+const cashInRegister = 100
+const nextOrderId = 1
 const orderQueue = []
-let nextOrderId = 1
 
-function addNewPizz(){
+function addNewPizza(pizzaObj) {
     menu.push(pizzaObj)
 }
 
-function placeOrder(pname){
-    let targetObj =  menu.filter(v => v.name == pname)[0]
-    cashInRegister += targetObj.price
-    let newOrder = {id: nextOrderId++, pizza : targetObj, status: 'ordered'}
+function placeOrder(pizzaName) {
+    const selectedPizza = menu.find(pizzaObj => pizzaObj.name === pizzaName)
+    cashInRegister += selectedPizza.price
+    const newOrder = { id: nextOrderId++, pizza: selectedPizza, status: "ordered" }
     orderQueue.push(newOrder)
     return newOrder
 }
-console.log(placeOrder('Veggie'))
-
-console.log(orderQueue)
 
 function completeOrder(orderId) {
     const order = orderQueue.find(order => order.id === orderId)
@@ -30,5 +27,13 @@ function completeOrder(orderId) {
     return order
 }
 
-console.log('***************************************************')
-console.log(completeOrder(1))
+addNewPizza({ name: "Chicken Bacon Ranch", cost: 12 })
+addNewPizza({ name: "BBQ Chicken", cost: 12 })
+addNewPizza({ name: "Spicy Sausage", cost: 11 })
+
+placeOrder("Chicken Bacon Ranch")
+completeOrder("1")
+
+console.log("Menu:", menu)
+console.log("Cash in register:", cashInRegister)
+console.log("Order queue:", orderQueue)
