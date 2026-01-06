@@ -7,6 +7,7 @@ const menu = [
 
 let cashInRegister = 100
 const orderQueue = []
+let nextOrderId = 1
 
 function addNewPizz(){
     menu.push(pizzaObj)
@@ -14,10 +15,20 @@ function addNewPizz(){
 
 function placeOrder(pname){
     let targetObj =  menu.filter(v => v.name == pname)[0]
-    //console.log(targetObj)
     cashInRegister += targetObj.price
-    let orderObj = {pizza : targetObj, status: 'ordered'}
-    orderQueue.push(orderObj)
-    return orderQueue
+    let newOrder = {id: nextOrderId++, pizza : targetObj, status: 'ordered'}
+    orderQueue.push(newOrder)
+    return newOrder
 }
 console.log(placeOrder('Veggie'))
+
+console.log(orderQueue)
+
+function completeOrder(orderId) {
+    const order = orderQueue.find(order => order.id === orderId)
+    order.status = "completed"
+    return order
+}
+
+console.log('***************************************************')
+console.log(completeOrder(1))
