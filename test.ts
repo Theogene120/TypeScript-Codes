@@ -1,33 +1,10 @@
-enum Month {
-    Jan = 1,
-    Feb,
-    Mar,
-    Apr,
-    May,
-    Jun,
-    Jul,
-    Aug,
-    Sep,
-    Oct,
-    Nov,
-    Dec
-};
+let res: any;
+res = 1;
+console.log(res)
 
-function isItSummer(month: Month) {
-  let isSummer: boolean;
-  switch (month) {
-    case Month.Jun:
-    case Month.Jul:
-    case Month.Aug:
-      isSummer = true;
-      break;
-    default:
-      isSummer = false;
-      break;
-  }
-  return isSummer;
-}
+res = 'hello'
+console.log(res)
 
-console.log(isItSummer(Month.Jan)); // true
-
-console.log(Month.Feb)
+res = [1,2,3,4,5]
+const total = res.reduce((sum: number, val: number): number => sum + val, 0)
+console.log(total)
