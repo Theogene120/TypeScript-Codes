@@ -1,5 +1,5 @@
 enum Month {
-    Jan,
+    Jan = 1,
     Feb,
     Mar,
     Apr,
