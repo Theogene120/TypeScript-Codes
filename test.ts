@@ -1,10 +1,5 @@
-let res: any;
-res = 1;
-console.log(res)
 
-res = 'hello'
-console.log(res)
+const json = `{"latitude": 10.11, "longitude":12.12}`;
 
-res = [1,2,3,4,5]
-const total = res.reduce((sum: number, val: number): number => sum + val, 0)
-console.log(total)
+const currentLocation = JSON.parse(json);
+console.log(typeof currentLocation);
