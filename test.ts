@@ -1,5 +1,25 @@
-let result: unknown;
-result = [1,2,3];
+function add(a: number | string, b: number | string) {
+    if (typeof a === 'number' && typeof b === 'number') {
+        return a + b;
+    }
+    if (typeof a === 'string' && typeof b === 'string') {
+        return a.concat(b);
+    }
+    throw new Error('Parameters must be numbers or strings');
+}
 
-const total = (<number[]>result).reduce((a: number, b:number ) => a + b, 0);
-console.log(total);
+let name: 'Theos';
+name = 'Theos'
+
+console.log(name)
+
+type Person = {
+    name: string,
+    age: number
+}
+
+let person: Person = {
+    name: 'Theos',
+    age: 35
+}
+console.log(person)
