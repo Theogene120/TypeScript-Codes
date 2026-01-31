@@ -1,5 +1,5 @@
+let result: unknown;
+result = [1,2,3];
 
-const json = `{"latitude": 10.11, "longitude":12.12}`;
-
-const currentLocation = JSON.parse(json);
-console.log(typeof currentLocation);
+const total = (<number[]>result).reduce((a: number, b:number ) => a + b, 0);
+console.log(total);

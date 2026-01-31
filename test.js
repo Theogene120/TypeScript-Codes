@@ -1,3 +1,4 @@
-var json = "{\"latitude\": 10.11, \"longitude\":12.12}";
-var currentLocation = JSON.parse(json);
-console.log(typeof currentLocation);
+var result;
+result = [1, 2, 3];
+var total = result.reduce(function (a, b) { return a + b; }, 0);
+console.log(total);
