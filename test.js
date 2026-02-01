@@ -1,13 +1,15 @@
-var authorize = function (role) {
-    switch (role) {
-        case 'admin':
-            return 'You can do anything';
-        case 'user':
-            return 'You can do something';
+var getName = function (name) {
+    switch (name) {
+        case 'Theos': {
+            console.log("Welcome Dr. ".concat(name, "!"));
+            break;
+        }
         default:
-            // never reach here util we add a new role
-            var _unreachable = role;
-            throw new Error("Invalid role: ".concat(_unreachable));
+            console.log("Welcome ".concat(name));
+            break;
+        case 'Eva':
+            console.log("Welcome Mr. ".concat(name));
+            break;
     }
 };
-console.log(authorize('user'));
+getName('Mugisha');
