@@ -1,25 +1,16 @@
-function add(a: number | string, b: number | string) {
-    if (typeof a === 'number' && typeof b === 'number') {
-        return a + b;
-    }
-    if (typeof a === 'string' && typeof b === 'string') {
-        return a.concat(b);
-    }
-    throw new Error('Parameters must be numbers or strings');
-}
+type Role = 'admin' | 'user';
 
-let name: 'Theos';
-name = 'Theos'
+const authorize = (role: Role): string => {
+  switch (role) {
+    case 'admin':
+      return 'You can do anything';
+    case 'user':
+      return 'You can do something';
+    default:
+      // never reach here util we add a new role
+      const _unreachable: never = role;
+      throw new Error(`Invalid role: ${_unreachable}`);
+  }
+};
 
-console.log(name)
-
-type Person = {
-    name: string,
-    age: number
-}
-
-let person: Person = {
-    name: 'Theos',
-    age: 35
-}
-console.log(person)
+console.log(authorize('user'));

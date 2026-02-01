@@ -1,17 +1,13 @@
-function add(a, b) {
-    if (typeof a === 'number' && typeof b === 'number') {
-        return a + b;
+var authorize = function (role) {
+    switch (role) {
+        case 'admin':
+            return 'You can do anything';
+        case 'user':
+            return 'You can do something';
+        default:
+            // never reach here util we add a new role
+            var _unreachable = role;
+            throw new Error("Invalid role: ".concat(_unreachable));
     }
-    if (typeof a === 'string' && typeof b === 'string') {
-        return a.concat(b);
-    }
-    throw new Error('Parameters must be numbers or strings');
-}
-var name;
-name = 'Theos';
-console.log(name);
-var person = {
-    name: 'Theos',
-    age: 35
 };
-console.log(person);
+console.log(authorize('user'));
