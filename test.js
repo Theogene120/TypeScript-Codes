@@ -1,15 +1,11 @@
-var getName = function (name) {
-    switch (name) {
-        case 'Theos': {
-            console.log("Welcome Dr. ".concat(name, "!"));
-            break;
-        }
-        default:
-            console.log("Welcome ".concat(name));
-            break;
-        case 'Eva':
-            console.log("Welcome Mr. ".concat(name));
-            break;
-    }
-};
-getName('Mugisha');
+// let i = 0;
+// for (; i < 10; i++) {
+//     console.log(i);
+// }
+var i = 0;
+for (;;) {
+    console.log(i);
+    i++;
+    if (i > 10)
+        break;
+}

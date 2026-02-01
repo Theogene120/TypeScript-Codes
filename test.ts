@@ -1,18 +1,11 @@
+// let i = 0;
+// for (; i < 10; i++) {
+//     console.log(i);
+// }
 
-let getName = (name: string) => {
-  switch(name){
-  case 'Theos':{
-    console.log(`Welcome Dr. ${name}!`)
-    break
-  }
-    default:
-    console.log(`Welcome ${name}`)
-    break
-  case 'Eva':
-    console.log(`Welcome Mr. ${name}`)
-    break
-  }
+let i = 0
+for(;;){
+  console.log(i)
+  i++
+  if(i > 9) break
 }
-
-getName('Mugisha')
-
