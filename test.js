@@ -1,11 +1,10 @@
-// let i = 0;
-// for (; i < 10; i++) {
-//     console.log(i);
-// }
-var i = 0;
-for (;;) {
-    console.log(i);
-    i++;
-    if (i > 10)
-        break;
+function greet(name) {
+    if (name === undefined) {
+        console.log("Hello, guest");
+    }
+    else {
+        console.log("Hello, " + name);
+    }
 }
+greet(); // Hello, guest
+greet('Theos'); // Hello, Theos

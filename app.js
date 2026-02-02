@@ -1,3 +1,10 @@
+function greet(name) {
+  if (name === undefined) {
+    console.log("Hello, guest");
+  } else {
+    console.log("Hello, " + name);
+  }
+}
 
-console.log(Number.parseFloat("3.14"));   // 3.14
-console.log(Number.parseFloat("3.14px")); // 3.14
+greet() // Hello, guest
+greet('Theos') // Hello, Theos
