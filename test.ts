@@ -1,10 +1,7 @@
-function greet(name?: string) {
-  if (name === undefined) {
-    console.log("Hello, guest");
-  } else {
-    console.log("Hello, " + name);
-  }
+function getTotal(...numbers: number[]): number{
+    return numbers.reduce((sum, val) => sum + val, 0);
 }
 
-greet() // Hello, guest
-greet('Theos') // Hello, Theos
+console.log(getTotal()); // 0
+console.log(getTotal(10, 20)); // 30
+console.log(getTotal(10, 20, 30)); // 60
