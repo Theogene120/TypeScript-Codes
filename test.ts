@@ -1,19 +1,17 @@
-class Person {
-  readonly ssn: string;
-  public firstName: string;
-  private lastName: string;
-
-  constructor(ssn: string, firstName: string, lastName: string) {
-    this.ssn = ssn;
-    this.firstName = firstName;
-    this.lastName = lastName;
-  }
-
-  getFullName(): string {
-    return `${this.firstName} ${this.lastName}`;
+class Animal {
+  makeSound(): void {
+    console.log("The animal makes a sound");
   }
 }
 
-let person = new Person('153-07-3130', 'John', 'Doe');
-person.firstName = 'Evariste'
-console.log(person.getFullName()); // compile error
+class Dog extends Animal {
+  makeSound(): void {
+    console.log("The dog barks");
+  }
+}
+
+const myDog = new Dog();
+myDog.makeSound(); // The dog barks
+
+let obj = new Animal()
+obj.makeSound()
