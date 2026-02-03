@@ -1,18 +1,19 @@
-function combine(...args: (number | string)[]): [number, string] {
-  let total = 0;
-  let str = '';
-  args.forEach((arg) => {
-    if (typeof arg === 'number') {
-      total += arg;
-    } else if (typeof arg === 'string') {
-      str += arg;
-    }
-  });
+class Person {
+  readonly ssn: string;
+  public firstName: string;
+  private lastName: string;
 
-  return [total, str];
+  constructor(ssn: string, firstName: string, lastName: string) {
+    this.ssn = ssn;
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  getFullName(): string {
+    return `${this.firstName} ${this.lastName}`;
+  }
 }
 
-const [total, str] = combine(3, 'Happy', 2, 1, ' New Year');
-
-console.log({ total });
-console.log({ str });
+let person = new Person('153-07-3130', 'John', 'Doe');
+person.firstName = 'Evariste'
+console.log(person.getFullName()); // compile error

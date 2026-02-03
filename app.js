@@ -1,10 +1,17 @@
-function greet(name) {
-  if (name === undefined) {
-    console.log("Hello, guest");
-  } else {
-    console.log("Hello, " + name);
+class Person {
+  ssn;
+  firstName;
+  lastName;
+  constructor(ssn, firstName, lastName){
+    this.ssn = ssn
+    this.firstName = firstName
+    this.lastName = lastName
+  }
+  getFullName(){
+    return `${this.firstName} ${this.lastName}`
   }
 }
 
-greet() // Hello, guest
-greet('Theos') // Hello, Theos
+let person = new Person(101, 'Igiraneza', 'Theogene')
+
+console.log(person.getFullName())
