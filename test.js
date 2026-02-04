@@ -13,21 +13,50 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var Person = /** @class */ (function () {
-    function Person() {
+var Employee = /** @class */ (function () {
+    function Employee(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
-    Person.prototype.greet = function () {
-        console.log("Hello");
+    Object.defineProperty(Employee.prototype, "fullName", {
+        get: function () {
+            return "".concat(this.firstName, " ").concat(this.lastName);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Employee.prototype.compensationStatement = function () {
+        return "".concat(this.fullName, " makes ").concat(this.getSalary(), " a month.");
     };
-    return Person;
+    return Employee;
 }());
-var Student = /** @class */ (function (_super) {
-    __extends(Student, _super);
-    function Student() {
-        return _super !== null && _super.apply(this, arguments) || this;
+// let employee = new Employee('John','Doe'); => Error
+var FullTimeEmployee = /** @class */ (function (_super) {
+    __extends(FullTimeEmployee, _super);
+    function FullTimeEmployee(firstName, lastName, salary) {
+        var _this = _super.call(this, firstName, lastName) || this;
+        _this.salary = salary;
+        return _this;
     }
-    Student.prototype.greet = function () {
-        console.log("Hello, I am a student");
+    FullTimeEmployee.prototype.getSalary = function () {
+        return this.salary;
     };
-    return Student;
-}(Person));
+    return FullTimeEmployee;
+}(Employee));
+var Contractor = /** @class */ (function (_super) {
+    __extends(Contractor, _super);
+    function Contractor(firstName, lastName, rate, hours) {
+        var _this = _super.call(this, firstName, lastName) || this;
+        _this.rate = rate;
+        _this.hours = hours;
+        return _this;
+    }
+    Contractor.prototype.getSalary = function () {
+        return this.rate * this.hours;
+    };
+    return Contractor;
+}(Employee));
+var john = new FullTimeEmployee('John', 'Doe', 12000);
+var jane = new Contractor('Jane', 'Doe', 100, 160);
+console.log(john.compensationStatement());
+console.log(jane.compensationStatement());
