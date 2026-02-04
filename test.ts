@@ -1,17 +1,11 @@
-class Animal {
-  makeSound(): void {
-    console.log("The animal makes a sound");
+class Person {
+  protected greet(): void {
+    console.log("Hello");
   }
 }
 
-class Dog extends Animal {
-  makeSound(): void {
-    console.log("The dog barks");
+class Student extends Person {
+  protected greet(): void {
+    console.log("Hello, I am a student");
   }
 }
-
-const myDog = new Dog();
-myDog.makeSound(); // The dog barks
-
-let obj = new Animal()
-obj.makeSound()

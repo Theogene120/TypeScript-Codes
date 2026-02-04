@@ -13,25 +13,21 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var Animal = /** @class */ (function () {
-    function Animal() {
+var Person = /** @class */ (function () {
+    function Person() {
     }
-    Animal.prototype.makeSound = function () {
-        console.log("The animal makes a sound");
+    Person.prototype.greet = function () {
+        console.log("Hello");
     };
-    return Animal;
+    return Person;
 }());
-var Dog = /** @class */ (function (_super) {
-    __extends(Dog, _super);
-    function Dog() {
+var Student = /** @class */ (function (_super) {
+    __extends(Student, _super);
+    function Student() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    Dog.prototype.makeSound = function () {
-        console.log("The dog barks");
+    Student.prototype.greet = function () {
+        console.log("Hello, I am a student");
     };
-    return Dog;
-}(Animal));
-var myDog = new Dog();
-myDog.makeSound(); // The dog barks
-var obj = new Animal();
-obj.makeSound();
+    return Student;
+}(Person));
