@@ -1,14 +1,16 @@
-interface Person {
-  firstName: string
-  lastName: string
+
+
+type Dog = { bark(): void };
+type Cat = { meow(): void };
+
+function isDog(animal: Dog | Cat): animal is Dog {
+  return "bark" in animal;
 }
 
-function fullName(person: Person) {
-  return `${person.firstName} ${person.lastName}`
+function speak(animal: Dog | Cat) {
+  if (isDog(animal)) {
+    animal.bark(); // ✅ Dog
+  } else {
+    animal.meow(); // ✅ Cat
+  }
 }
-
-let emp = {
-  firstName: 'Igiraneza',
-  lastName: 'Theogene'
-}
-console.log(fullName(emp))

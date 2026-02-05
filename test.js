@@ -1,8 +1,11 @@
-function fullName(person) {
-    return "".concat(person.firstName, " ").concat(person.lastName);
+function isDog(animal) {
+    return "bark" in animal;
 }
-var emp = {
-    firstName: 'Igiraneza',
-    lastName: 'Theogene'
-};
-console.log(fullName(emp));
+function speak(animal) {
+    if (isDog(animal)) {
+        animal.bark(); // ✅ Dog
+    }
+    else {
+        animal.meow(); // ✅ Cat
+    }
+}
