@@ -1,11 +1,7 @@
-function isDog(animal) {
-    return "bark" in animal;
-}
-function speak(animal) {
-    if (isDog(animal)) {
-        animal.bark(); // ✅ Dog
-    }
-    else {
-        animal.meow(); // ✅ Cat
-    }
-}
+var Status;
+(function (Status) {
+    Status["Success"] = "successful";
+    Status["Error"] = "my error";
+    Status["Loading"] = "still loading";
+})(Status || (Status = {}));
+console.log(Status.Error);

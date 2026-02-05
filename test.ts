@@ -1,16 +1,7 @@
-
-
-type Dog = { bark(): void };
-type Cat = { meow(): void };
-
-function isDog(animal: Dog | Cat): animal is Dog {
-  return "bark" in animal;
+enum Status {
+  Success = 'successful',
+  Error = 'my error',
+  Loading = 'still loading'
 }
 
-function speak(animal: Dog | Cat) {
-  if (isDog(animal)) {
-    animal.bark(); // ✅ Dog
-  } else {
-    animal.meow(); // ✅ Cat
-  }
-}
+console.log(Status.Error)
