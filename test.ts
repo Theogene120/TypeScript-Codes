@@ -1,7 +1,10 @@
-enum Status {
-  Success = 'successful',
-  Error = 'my error',
-  Loading = 'still loading'
+function randomElement<T>(items: T[]): T {
+  let index = Math.floor(Math.random() * items.length)
+  return items[index]
 }
 
-console.log(Status.Error)
+let nums =  [1,2,3,4,5]
+let names = ['Theo', 'Eva', 'Cyn', 'Best']
+
+console.log(randomElement<number>(nums))
+console.log(randomElement<string>(names))
