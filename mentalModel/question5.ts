@@ -24,7 +24,7 @@ interface Admin {
 
 export type Person = User | Admin;
 
-export const persons: Person[] = [
+const persons: Person[] = [
     {
         name: 'Max Mustermann',
         age: 25,
@@ -47,7 +47,7 @@ export const persons: Person[] = [
     }
 ];
 
-export function logPerson(person: Person) {
+function logPerson(person: Person) {
     let additionalInformation: string;
     
     // Use 'in' operator as a type guard

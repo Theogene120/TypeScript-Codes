@@ -12,4 +12,6 @@ var __assign = (this && this.__assign) || function () {
 function combine(obj1, obj2) {
     return __assign(__assign({}, obj1), obj2);
 }
-console.log(combine({ name: 'Theo', age: 20 }, { salary: 20, age: 30 }));
+//console.log(combine({name: 'Theo', age: 20}, {salary: 20, age: 30}))
+console.log(combine([3, 4, 5, 6], { salary: 20, age: 30 }));
+//console.log(combine({name: 'Theo', age: 20}, {salary: 20, age: 30}))
