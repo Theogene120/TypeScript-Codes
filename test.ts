@@ -1,10 +1,5 @@
-function randomElement<T>(items: T[]): T {
-  let index = Math.floor(Math.random() * items.length)
-  return items[index]
+function combine<U, V>(obj1: U, obj2: V){
+  return {...obj1, ...obj2}
 }
 
-let nums =  [1,2,3,4,5]
-let names = ['Theo', 'Eva', 'Cyn', 'Best']
-
-console.log(randomElement<number>(nums))
-console.log(randomElement<string>(names))
+console.log(combine({name: 'Theo', age: 20}, {salary: 20, age: 30}))
