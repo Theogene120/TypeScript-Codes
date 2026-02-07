@@ -1,7 +1,15 @@
-function combine<U extends {length: number}, V>(obj1: U, obj2: V): U & V{
-  return {...obj1, ...obj2}
-}
+// Define the tuple type for the input
+type RangeTuple = [boolean, { name: string; age: number }];
 
-//console.log(combine({name: 'Theo', age: 20}, {salary: 20, age: 30}))
-console.log(combine([3,4,5,6], {salary: 20, age: 30}))
-//console.log(combine({name: 'Theo', age: 20}, {salary: 20, age: 30}))
+// Define the return type
+type RangeResult = { x: boolean; y: boolean };
+
+// Fix the function signature
+const setRange = (range: RangeTuple): RangeResult => {
+  const x = range[0];
+  const y = range[1];
+  return { x, y: y.age > 10 };
+};
+
+// This now works correctly
+console.log(setRange([true, { name: 'Patrick', age: 3 }]))
